@@ -10,7 +10,7 @@ syntax = "proto2";
 
 import "src/gtfs-realtime.proto";
 
-option java_package = "com.github.pgroyal22";
+option java_package = "com.google.transit.realtime";
 package transit_realtime;
 
 message TripReplacementPeriod {
