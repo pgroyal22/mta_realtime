@@ -1,6 +1,5 @@
 package com.github.pgroyal22;
 
-
 import com.google.transit.realtime.GtfsRealtime;
 import io.quarkus.scheduler.Scheduled;
 import jakarta.enterprise.context.ApplicationScoped;
@@ -11,7 +10,6 @@ public class UpdatesService {
 
     @Inject
     GLiveFeed gliveFeed;
-
 
     @Scheduled(cron = "0/5 * * * * ?" )
     void fetchUpdates() {
