@@ -1,22 +1,19 @@
 package com.github.pgroyal22;
 
 import com.google.transit.realtime.GtfsRealtime;
+import com.google.transit.realtime.GtfsRealtimeNYCT;
 import jakarta.inject.Singleton;
 
 import java.io.IOException;
-import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
-@Singleton
-public class GLiveFeed {
+public class LiveFeed {
 
     private GtfsRealtime.FeedMessage feed;
 
-    public GLiveFeed() throws IOException, URISyntaxException {
-        URL url = new URI("https://api-endpoint.mta.info/Dataservice/mtagtfsfeeds/nyct%2Fgtfs-g").toURL();
+    public LiveFeed(URL url) throws IOException {
         feed = GtfsRealtime.FeedMessage.parseFrom(url.openStream());
-
     }
 
     public GtfsRealtime.FeedMessage getFeed() {
